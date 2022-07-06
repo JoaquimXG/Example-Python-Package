@@ -3,31 +3,23 @@ import pathlib
 
 here = pathlib.Path(__file__).parent.resolve()
 
-long_description = (here / 'README.md').read_text(encoding='utf-8')
+long_description = (here / "README.md").read_text(encoding="utf-8")
+
+pypi_package_name = "Package Name"
+cli_command = "cli-command"
+local_package_name = "package_folder"
 
 setup(
-    name='sample_package_xjg',
-
-    version='0.0.2',
-
-    description='A sample Python project',
+    version="Semantic version number", # Edit Me
+    name=pypi_package_name,
+    description="Short Description", # Edit Me
     long_description=long_description,
-    long_description_content_type='text/markdown',
-
-    # url='https://github.com/pypa/sampleproject',
-
-    author='Joaquim Gomez',
-
-    package_dir={'': 'src'},
-    packages=find_packages(where='src'),
-
-    python_requires='>=3.6, <4',
-
-    install_requires=['click', 'pandas'],
-
-    entry_points={
-        'console_scripts': [
-            'sample_package=sample_package.__main__:main'
-        ],
-    },
+    long_description_content_type="text/markdown",
+    # url='',
+    author="Joaquim Gomez",
+    package_dir={"": "src"},
+    packages=find_packages(where="src"),
+    python_requires=">=3.6, <4",
+    install_requires=["List", "Of", "Requirements"], # Edit Me
+    entry_points={"console_scripts": [f"{cli_command}={local_package_name}.cli:main"]},
 )
